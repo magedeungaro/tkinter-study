@@ -1,0 +1,10 @@
+version: '3'
+services:
+  tkinter_in_docker:
+    build: .
+    user: '${UID}:${GID}'
+    environment:
+      - DISPLAY=${DISPLAY}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ./app:/app
